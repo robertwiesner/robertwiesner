@@ -1,0 +1,256 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 4
+Title "Cortex-M7"
+Date "2021-02-26"
+Rev "V1.0"
+Comp "private"
+Comment1 "USB and Power generation"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:USB_B_Micro J?
+U 1 1 602F13B2
+P 1650 2250
+F 0 "J?" H 1707 2717 50  0000 C CNN
+F 1 "USB_B_Micro" H 1707 2626 50  0000 C CNN
+F 2 "Connector_USB:USB_Mini-B_Wuerth_65100516121_Horizontal" H 1800 2200 50  0001 C CNN
+F 3 "~" H 1800 2200 50  0001 C CNN
+F 4 "C91144" H 1650 2250 50  0001 C CNN "JCSC"
+	1    1650 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1950 2050 2300 2050
+Wire Wire Line
+	1950 2250 2300 2250
+Wire Wire Line
+	1950 2350 2300 2350
+Wire Wire Line
+	1950 2450 2300 2450
+Wire Wire Line
+	1650 2650 1650 2700
+NoConn ~ 1550 2650
+$Comp
+L power:GND #PWR?
+U 1 1 602F3B69
+P 1650 2700
+F 0 "#PWR?" H 1650 2450 50  0001 C CNN
+F 1 "GND" H 1655 2527 50  0000 C CNN
+F 2 "" H 1650 2700 50  0001 C CNN
+F 3 "" H 1650 2700 50  0001 C CNN
+	1    1650 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5VA #PWR?
+U 1 1 602F3EA8
+P 2300 2050
+F 0 "#PWR?" H 2300 1900 50  0001 C CNN
+F 1 "+5VA" H 2315 2223 50  0000 C CNN
+F 2 "" H 2300 2050 50  0001 C CNN
+F 3 "" H 2300 2050 50  0001 C CNN
+	1    2300 2050
+	1    0    0    -1  
+$EndComp
+Text HLabel 6450 2050 2    50   BiDi ~ 0
+USB_D_N
+Text HLabel 2300 2450 2    50   Input ~ 0
+USB_ID
+$Comp
+L power:+5VA #PWR?
+U 1 1 603E66BC
+P 8550 4900
+F 0 "#PWR?" H 8550 4750 50  0001 C CNN
+F 1 "+5VA" H 8565 5073 50  0000 C CNN
+F 2 "" H 8550 4900 50  0001 C CNN
+F 3 "" H 8550 4900 50  0001 C CNN
+	1    8550 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 4900 8550 5000
+$Comp
+L Device:LED D?
+U 1 1 603EAA89
+P 8550 5550
+F 0 "D?" V 8589 5432 50  0000 R CNN
+F 1 "LED_GREEN" V 8498 5432 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric" H 8550 5550 50  0001 C CNN
+F 3 "~" H 8550 5550 50  0001 C CNN
+F 4 "C72043" V 8550 5550 50  0001 C CNN "JCSC"
+	1    8550 5550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 603EB3E6
+P 8550 5800
+F 0 "#PWR?" H 8550 5550 50  0001 C CNN
+F 1 "GND" H 8555 5627 50  0000 C CNN
+F 2 "" H 8550 5800 50  0001 C CNN
+F 3 "" H 8550 5800 50  0001 C CNN
+	1    8550 5800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 5700 8550 5800
+Wire Wire Line
+	8550 5400 8550 5300
+$Comp
+L jlcb:1p2KOhms R?
+U 1 1 603F05C2
+P 8550 5150
+F 0 "R?" H 8620 5196 50  0000 L CNN
+F 1 "1p2KOhms" H 8620 5105 50  0000 L CNN
+F 2 "Resistor_SMD:R_0402_1005Metric" H 8550 5150 50  0001 C CNN
+F 3 "" V 8480 5150 50  0001 C CNN
+F 4 "C25862" H 8550 5150 50  0001 C CNN "JCSC"
+	1    8550 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_TVS-Diodes:USBLC6-2SC6 D?
+U 1 1 60403C86
+P 5700 2350
+F 0 "D?" H 5700 3037 60  0000 C CNN
+F 1 "USBLC6-2SC6" H 5700 2931 60  0000 C CNN
+F 2 "digikey-footprints:SOT23-6L" H 5900 2550 60  0001 L CNN
+F 3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/06/1d/48/9c/6c/20/4a/b2/CD00050750.pdf/files/CD00050750.pdf/jcr:content/translations/en.CD00050750.pdf" H 5900 2650 60  0001 L CNN
+F 4 "497-5235-1-ND" H 5900 2750 60  0001 L CNN "Digi-Key_PN"
+F 5 "USBLC6-2SC6" H 5900 2850 60  0001 L CNN "MPN"
+F 6 "Circuit Protection" H 5900 2950 60  0001 L CNN "Category"
+F 7 "TVS - Diodes" H 5900 3050 60  0001 L CNN "Family"
+F 8 "http://www.st.com/content/ccc/resource/technical/document/datasheet/06/1d/48/9c/6c/20/4a/b2/CD00050750.pdf/files/CD00050750.pdf/jcr:content/translations/en.CD00050750.pdf" H 5900 3150 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/stmicroelectronics/USBLC6-2SC6/497-5235-1-ND/1121688" H 5900 3250 60  0001 L CNN "DK_Detail_Page"
+F 10 "TVS DIODE 5.25V 17V SOT23-6" H 5900 3350 60  0001 L CNN "Description"
+F 11 "STMicroelectronics" H 5900 3450 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 5900 3550 60  0001 L CNN "Status"
+F 13 "C7519" H 5700 2350 50  0001 C CNN "JCSC"
+	1    5700 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D_Schottky D?
+U 1 1 604128FE
+P 3000 2050
+F 0 "D?" H 3000 1833 50  0000 C CNN
+F 1 "B5819W" H 3000 1924 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-123" H 3000 2050 50  0001 C CNN
+F 3 "~" H 3000 2050 50  0001 C CNN
+F 4 "C8598" H 3000 2050 50  0001 C CNN "JCSC"
+	1    3000 2050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2300 2050 2850 2050
+Connection ~ 2300 2050
+Wire Wire Line
+	3150 2050 3450 2050
+$Comp
+L power:+5V #PWR?
+U 1 1 60414E45
+P 3450 2050
+F 0 "#PWR?" H 3450 1900 50  0001 C CNN
+F 1 "+5V" H 3465 2223 50  0000 C CNN
+F 2 "" H 3450 2050 50  0001 C CNN
+F 3 "" H 3450 2050 50  0001 C CNN
+	1    3450 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 6041E1AC
+P 6350 2350
+F 0 "#PWR?" H 6350 2200 50  0001 C CNN
+F 1 "+5V" H 6365 2523 50  0000 C CNN
+F 2 "" H 6350 2350 50  0001 C CNN
+F 3 "" H 6350 2350 50  0001 C CNN
+	1    6350 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6041E7BE
+P 5050 2350
+F 0 "#PWR?" H 5050 2100 50  0001 C CNN
+F 1 "GND" H 5055 2177 50  0000 C CNN
+F 2 "" H 5050 2350 50  0001 C CNN
+F 3 "" H 5050 2350 50  0001 C CNN
+	1    5050 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5050 2350 5200 2350
+Wire Wire Line
+	6200 2350 6350 2350
+Wire Wire Line
+	6200 2650 6450 2650
+Wire Wire Line
+	6450 2050 6200 2050
+Wire Wire Line
+	5200 2650 4900 2650
+Wire Wire Line
+	4900 2050 5200 2050
+Text Label 2300 2250 0    50   ~ 0
+USB_CONN_D+
+Text Label 2300 2350 0    50   ~ 0
+USB_CONN_D-
+Text Label 4900 2050 2    50   ~ 0
+USB_CONN_D-
+Text Label 4900 2650 2    50   ~ 0
+USB_CONN_D+
+$Comp
+L jlcb:100nF_16V C?
+U 1 1 60431806
+P 7250 2350
+F 0 "C?" H 7365 2396 50  0000 L CNN
+F 1 "100nF_16V" H 7365 2305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 7250 2350 50  0001 C CNN
+F 3 "" H 7288 2200 50  0001 C CNN
+F 4 "C1525" H 7250 2350 50  0001 C CNN "JCSC"
+	1    7250 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 60432248
+P 7250 2200
+F 0 "#PWR?" H 7250 2050 50  0001 C CNN
+F 1 "+5V" H 7265 2373 50  0000 C CNN
+F 2 "" H 7250 2200 50  0001 C CNN
+F 3 "" H 7250 2200 50  0001 C CNN
+	1    7250 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60432872
+P 7250 2500
+F 0 "#PWR?" H 7250 2250 50  0001 C CNN
+F 1 "GND" H 7255 2327 50  0000 C CNN
+F 2 "" H 7250 2500 50  0001 C CNN
+F 3 "" H 7250 2500 50  0001 C CNN
+	1    7250 2500
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	8150 4450 8150 6200
+Wire Notes Line
+	8150 6200 9800 6200
+Wire Notes Line
+	9800 6200 9800 4450
+Wire Notes Line
+	9800 4450 8150 4450
+Text Notes 8500 6150 0    50   ~ 0
+USB Power LED\n
+Text Label 8550 5350 0    50   ~ 0
+PWRLED_5V
+Text HLabel 6450 2650 2    50   BiDi ~ 0
+USB_D_P
+$EndSCHEMATC
